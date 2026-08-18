@@ -1,0 +1,172 @@
+.achievements-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 100px 0px;
+}
+
+.achievements-container {
+  width: var(--cWidth);
+  max-width: 1920px;
+  margin: auto;
+}
+
+.achievements-section h2 {
+  font-size: 60px;
+  font-weight: 400;
+  text-align: center;
+  background: linear-gradient(0deg, #7f40ff, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin-bottom: 60px;
+}
+
+.achievements-section h2 > span {
+  font-family: "Geist", sans-serif;
+  font-weight: 300;
+}
+
+.achievement-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(196, 129, 255, 0.07));
+  border: 1px solid rgba(255, 200, 0, 0.25);
+  border-radius: 20px;
+  padding: 48px;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  transition: border-color 0.3s, transform 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ffd700, #c481ff, #7f40ff);
+  border-radius: 20px 20px 0 0;
+}
+
+.achievement-card:hover {
+  border-color: rgba(255, 200, 0, 0.45);
+  transform: translateY(-4px);
+}
+
+.achievement-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 200, 0, 0.05));
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 16px;
+  padding: 20px 24px;
+  min-width: 100px;
+  text-align: center;
+}
+
+.trophy-icon {
+  font-size: 40px;
+  display: block;
+}
+
+.achievement-rank {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffd700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.achievement-content {
+  flex: 1;
+}
+
+.achievement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.achievement-header h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  color: #eae5ec;
+}
+
+.achievement-year {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffd700;
+  background: rgba(255, 215, 0, 0.1);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  padding: 4px 12px;
+  border-radius: 50px;
+  flex-shrink: 0;
+}
+
+.achievement-content p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #c0b8c8;
+  margin: 0 0 24px 0;
+}
+
+.achievement-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.achievement-tag {
+  background: rgba(255, 215, 0, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  color: #ffd700;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+}
+
+@media only screen and (max-width: 768px) {
+  .achievements-section h2 {
+    font-size: 40px;
+  }
+  .achievement-card {
+    flex-direction: column;
+    padding: 32px 24px;
+    gap: 24px;
+  }
+  .achievement-badge {
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    min-width: unset;
+    padding: 14px 20px;
+  }
+  .achievement-header h3 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .achievements-section h2 {
+    font-size: 32px;
+  }
+}

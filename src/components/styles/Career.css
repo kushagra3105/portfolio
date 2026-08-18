@@ -74,6 +74,12 @@
   margin: 10px 0px;
   color: var(--accentColor);
 }
+.career-location {
+  font-size: 13px;
+  color: #888;
+  display: block;
+  margin-top: 6px;
+}
 .career-timeline {
   position: absolute;
   top: -50px;

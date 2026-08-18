@@ -6,9 +6,13 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-          dolores numquam iusto Ratione earum ducimus autem id iure pariatur
-          dolorum quae maiores.
+          Computer Science undergraduate at SRM IST Ghaziabad with hands-on
+          experience in Machine Learning, Deep Learning, and Data Science.
+          Passionate about building intelligent applications using Python,
+          PyTorch, and Scikit-learn — from predictive models and image
+          segmentation to crop recommendation systems. Complemented by
+          internship experience in data preprocessing, feature engineering,
+          and real-world ML deployment.
         </p>
       </div>
     </div>

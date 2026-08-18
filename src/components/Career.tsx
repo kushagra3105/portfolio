@@ -6,54 +6,51 @@ const Career = () => {
       <div className="career-container">
         <h2>
           My career <span>&</span>
-          <br /> experience
+          <br />
+          experience
         </h2>
         <div className="career-info">
           <div className="career-timeline">
             <div className="career-dot"></div>
           </div>
+
+          {/* Internship 1 */}
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>Data Scientist Intern</h4>
+                <h5>Aarvasa Innovations Pvt. Ltd.</h5>
+                <span className="career-location">📍 Bhopal, India</span>
               </div>
-              <h3>20XX</h3>
+              <h3>2025–26</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Executed data preprocessing, feature engineering, and Machine
+              Learning model development workflows. Used Python, Pandas, NumPy,
+              and Scikit-learn for data analysis and predictive modeling.
+              Improved model prediction accuracy through data-driven
+              optimization techniques.
             </p>
           </div>
+
+          {/* Internship 2 */}
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
+                <h4>Data Scientist Intern</h4>
+                <h5>Web Gain Technologies Pvt. Ltd.</h5>
+                <span className="career-location">📍 Remote</span>
               </div>
-              <h3>20XX</h3>
+              <h3>2025</h3>
             </div>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
+              Worked on data analysis, visualisation, and predictive model
+              development using Python. Performed data cleaning and
+              preprocessing using Pandas and NumPy. Developed and evaluated
+              Machine Learning models using real-world datasets.
             </p>
           </div>
-          <div className="career-info-box">
-            <div className="career-info-in">
-              <div className="career-role">
-                <h4>Position In Company</h4>
-                <h5>Company Name</h5>
-              </div>
-              <h3>NOW</h3>
-            </div>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
-              labore sit non ipsum temporibus quidem, deserunt eaque officiis
-              mollitia ratione suscipit repellat.
-            </p>
-          </div>
+
         </div>
       </div>
     </div>

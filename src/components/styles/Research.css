@@ -1,0 +1,170 @@
+.research-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 100px 0px;
+}
+
+.research-container {
+  width: var(--cWidth);
+  max-width: 1920px;
+  margin: auto;
+}
+
+.research-section h2 {
+  font-size: 60px;
+  font-weight: 400;
+  text-align: center;
+  background: linear-gradient(0deg, #7f40ff, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  margin-bottom: 60px;
+}
+
+.research-section h2 > span {
+  font-family: "Geist", sans-serif;
+  font-weight: 300;
+}
+
+.research-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(196, 129, 255, 0.07), rgba(127, 64, 255, 0.04));
+  border: 1px solid rgba(196, 129, 255, 0.2);
+  border-radius: 20px;
+  padding: 48px;
+  position: relative;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.research-card:hover {
+  border-color: rgba(196, 129, 255, 0.45);
+  transform: translateY(-4px);
+}
+
+.research-badge {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: linear-gradient(135deg, #7f40ff, #c481ff);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 5px 14px;
+  border-radius: 50px;
+}
+
+.research-content h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  padding-right: 80px;
+  color: #eae5ec;
+}
+
+.research-desc {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #c0b8c8;
+  margin: 0 0 24px 0;
+}
+
+.research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.research-tag {
+  background: rgba(196, 129, 255, 0.1);
+  border: 1px solid rgba(196, 129, 255, 0.3);
+  color: var(--accentColor);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+}
+
+.research-results {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+}
+
+.research-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 36px;
+  font-weight: 700;
+  color: #c481ff;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+  text-align: center;
+}
+
+.research-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #7f40ff, #c481ff);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: opacity 0.3s, transform 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.research-btn:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  .research-section h2 {
+    font-size: 40px;
+  }
+  .research-card {
+    padding: 32px 24px;
+  }
+  .research-content h3 {
+    font-size: 22px;
+    padding-right: 60px;
+  }
+  .research-results {
+    gap: 24px;
+  }
+  .stat-value {
+    font-size: 28px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .research-section h2 {
+    font-size: 32px;
+  }
+  .research-results {
+    gap: 20px;
+  }
+}

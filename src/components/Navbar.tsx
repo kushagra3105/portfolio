@@ -23,18 +23,29 @@ const Navbar = () => {
     smoother.scrollTop(0);
     smoother.paused(true);
 
-    let links = document.querySelectorAll(".header ul a");
-    links.forEach((elem) => {
-      let element = elem as HTMLAnchorElement;
-      element.addEventListener("click", (e) => {
-        if (window.innerWidth > 1024) {
-          e.preventDefault();
-          let elem = e.currentTarget as HTMLAnchorElement;
-          let section = elem.getAttribute("data-href");
-          smoother.scrollTo(section, true, "top top");
-        }
+    const handleInternalLinks = () => {
+      const links = document.querySelectorAll<HTMLAnchorElement>('a[href^="#"], a[data-href^="#"]');
+      links.forEach((elem) => {
+        elem.addEventListener("click", (e) => {
+          const target = elem.getAttribute("data-href") || elem.getAttribute("href");
+          if (target && target.startsWith("#") && target !== "#" && target !== "/#") {
+            if (window.innerWidth > 1024 && smoother) {
+              e.preventDefault();
+              smoother.scrollTo(target, true, "top top");
+            } else {
+              const targetElem = document.querySelector(target);
+              if (targetElem) {
+                e.preventDefault();
+                targetElem.scrollIntoView({ behavior: "smooth" });
+              }
+            }
+          }
+        });
       });
-    });
+    };
+
+    handleInternalLinks();
+
     window.addEventListener("resize", () => {
       ScrollSmoother.refresh(true);
     });
@@ -43,14 +54,14 @@ const Navbar = () => {
     <>
       <div className="header">
         <a href="/#" className="navbar-title" data-cursor="disable">
-          Logo
+          KS
         </a>
         <a
-          href="mailto:example@mail.com"
+          href="mailto:kushagra.singh.dev@gmail.com"
           className="navbar-connect"
           data-cursor="disable"
         >
-          example@mail.com
+          kushagra.singh.dev@gmail.com
         </a>
         <ul>
           <li>
@@ -61,6 +72,11 @@ const Navbar = () => {
           <li>
             <a data-href="#work" href="#work">
               <HoverLinks text="WORK" />
+            </a>
+          </li>
+          <li>
+            <a data-href="#research" href="#research">
+              <HoverLinks text="RESEARCH" />
             </a>
           </li>
           <li>

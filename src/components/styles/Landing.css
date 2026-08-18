@@ -108,7 +108,7 @@
   left: 50%;
   z-index: 0;
   bottom: 50px;
-  pointer-events: inherit;
+  pointer-events: none;
 }
 .character-model::after {
   content: "";
@@ -356,3 +356,6 @@ h2.landing-info-h2 {
     font-size: 75px;
   }
 }
+
+
+
