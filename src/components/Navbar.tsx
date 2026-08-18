@@ -2,42 +2,35 @@ import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
-import { ScrollSmoother } from "gsap-trial/ScrollSmoother";
 import "./styles/Navbar.css";
 
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
-export let smoother: ScrollSmoother;
+gsap.registerPlugin(ScrollTrigger);
+
+export const smoother = {
+  scrollTo: (target: string, _smooth?: boolean, _pos?: string) => {
+    const el = document.querySelector(target);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  },
+  scrollTop: (_val?: number) => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  },
+  paused: (_val: boolean) => {},
+};
 
 const Navbar = () => {
   useEffect(() => {
-    smoother = ScrollSmoother.create({
-      wrapper: "#smooth-wrapper",
-      content: "#smooth-content",
-      smooth: 1.7,
-      speed: 1.7,
-      effects: true,
-      autoResize: true,
-      ignoreMobileResize: true,
-    });
-
-    smoother.scrollTop(0);
-    smoother.paused(true);
-
     const handleInternalLinks = () => {
       const links = document.querySelectorAll<HTMLAnchorElement>('a[href^="#"], a[data-href^="#"]');
       links.forEach((elem) => {
         elem.addEventListener("click", (e) => {
           const target = elem.getAttribute("data-href") || elem.getAttribute("href");
           if (target && target.startsWith("#") && target !== "#" && target !== "/#") {
-            if (window.innerWidth > 1024 && smoother) {
-              e.preventDefault();
-              smoother.scrollTo(target, true, "top top");
-            } else {
-              const targetElem = document.querySelector(target);
-              if (targetElem) {
-                e.preventDefault();
-                targetElem.scrollIntoView({ behavior: "smooth" });
-              }
+            e.preventDefault();
+            const targetElem = document.querySelector(target);
+            if (targetElem) {
+              targetElem.scrollIntoView({ behavior: "smooth" });
             }
           }
         });
@@ -47,7 +40,7 @@ const Navbar = () => {
     handleInternalLinks();
 
     window.addEventListener("resize", () => {
-      ScrollSmoother.refresh(true);
+      ScrollTrigger.refresh();
     });
   }, []);
   return (
